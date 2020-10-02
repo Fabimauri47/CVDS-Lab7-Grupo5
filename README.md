@@ -27,6 +27,7 @@
 8.  Verifique por medio de un cliente SQL, que la información retornada por el programa coincide con la que se encuentra almacenada en base de datos.
 parámetros:
 Probamos los métodos nombresProductosPedido y valorTotalPedido en el editor y el resultado fue el siguiente:
+![](/img/seccion8.PNG)
 Luego la probamos en el gestor de base de datos y estos fueron los resultados:
 ![](/img/pruebaproductos.PNG)
 ![](/img/pruebavalortotal.PNG)
