@@ -45,3 +45,9 @@ Al verificarlos en DBeaver estos fueron los resultados:
 ![](/img/pruebacarnetpaula.png)
 
 ![](/img/pruebacarnetfabian.png)
+
+
+
+## Sección II. - Introducción a MyBatis
+1. Revise la documentación básica de MyBatis de forma que entienda para qué sirve y el uso básico que se le puede dar al framework.
+2. Seguir las instrucciones que se encuentran en el repositorio de forma que en la clase MyBatisExample.java se creen los mappers necesarios y sea posible realizar la ejecución de diferentes sentencias SQL en la base de datos de pruebas.
