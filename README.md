@@ -40,5 +40,7 @@ En el editor también hicimos los registros en la tabla para cada integrante:
 Al verificarlos en DBeaver estos fueron los resultados:
 
 ![](/img/pruebacarnetfederico.png)
+
 ![](/img/pruebacarnetpaula.png)
+
 ![](/img/pruebacarnetfabian.png)
