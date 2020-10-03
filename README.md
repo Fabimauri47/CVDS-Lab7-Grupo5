@@ -55,5 +55,6 @@ Al verificarlos en DBeaver estos fueron los resultados:
 
 ### MyBatis_Introduction_VideoRental
 #### Parte I
-2.  ![](/img/MyBatis_Introduction_VideoRental-2.png)
+2. 
+![](/img/MyBatis_Introduction_VideoRental-2.png)
 
