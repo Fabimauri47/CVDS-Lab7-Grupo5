@@ -33,6 +33,11 @@
         where i.TIPOITEM_id=ti.id and i.id = #{idit}
     </select>
 
+    <insert parameterType="map" id="insertarItem">
+        insert into VI_ITEM(id, nombre, descripcion, fechalanzamiento, tarifaxdia, formatorenta, genero, TIPOITEM_id)
+        VALUES(#{item.id}, #{item.nombre}, #{item.descripcion}, #{item.fechaLanzamiento}, #{item.tarifaxDia},#{item.formatoRenta} ,#{item.genero}, #{item.tipo.id})
+    </insert>
+
     <resultMap type="Item" id="ItemResult">
         <id property="id" column="id"/>
         <result property="nombre" column="nombre"/>

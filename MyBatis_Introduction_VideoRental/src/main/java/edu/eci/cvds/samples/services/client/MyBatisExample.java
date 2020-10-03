@@ -22,12 +22,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 
-import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
+import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
+import edu.eci.cvds.samples.entities.Item;
+import edu.eci.cvds.samples.entities.TipoItem;
 
 /**
  *
@@ -60,7 +66,7 @@ public class MyBatisExample {
      * @param args
      * @throws SQLException 
      */
-    public static void main(String args[]) throws SQLException {
+    public static void main(String args[]) throws SQLException,ParseException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
@@ -71,11 +77,22 @@ public class MyBatisExample {
         /*Consultar un cliente*/
         System.out.println("Consulta Cliente 1 :");
         System.out.println(cm.consultarCliente(2));
-
-        /*Insertar Item*/
+        /*
+        //Insertar Item
+        System.out.println("Insertar item:");
+        TipoItem nuevoTipo=new TipoItem(12,"pruebaaa");
         ItemMapper im = sqlss.getMapper(ItemMapper.class);
+        Item iteem=new Item(nuevoTipo,1,"Bla bla bla","prueba bla bla bla", new SimpleDateFormat("yyyy-MM-dd").parse("2020-09-2"), 465131, "formato", "genero");
+        im.insertarItem(iteem);
+
+        //Insertar un item rentado
+        System.out.println("Insertar item rentado a un cliente:");
+        cm.agregarItemRentadoACliente(1,12,new SimpleDateFormat("yyyy-MM-dd").parse("2020-09-2"), new SimpleDateFormat("yyyy-MM-dd").parse("2020-10-29"));
+        System.out.println("ItemRentado Insertado:");
+        */
 
         /*Consultar los items*/
+        ItemMapper im = sqlss.getMapper(ItemMapper.class);
         System.out.println("Consulta Items :");
         System.out.println(im.consultarItems());
         

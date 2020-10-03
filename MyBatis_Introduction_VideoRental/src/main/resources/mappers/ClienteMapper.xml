@@ -64,7 +64,7 @@
         left join VI_ITEMRENTADO as ir on c.documento=ir.CLIENTES_documento
         left join VI_ITEMS as i on ir.ITEMS_id=i.id
         left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id
-        WHERE c.documento=#{idcli}
+        WHERE c.documento= #{idcli}
     </select>
 
     <insert parameterType="map" id="agregarItemRentadoACliente">
@@ -73,13 +73,13 @@
     </insert>
 
     <resultMap type='Cliente' id='ClienteResult'>
-        <id property='documento' column='documento'/>
-        <result property="nombre" column="nombre"/>
-        <result property="telefono" column="telefono"/>
-        <result property="direccion" column="direccion"/>
-        <result property="email" column="email"/>
-        <result property="vetado" column="vetado"/>
-        <collection property="itemrentado" ofType="ItemRentado" resultMap="ItemRentadoResult" columnPrefix="rentado_"/>
+        <id property='documento' column='cliente_documento'/>
+        <result property="nombre" column="cliente_nombre"/>
+        <result property="telefono" column="cliente_telefono"/>
+        <result property="direccion" column="cliente_direccion"/>
+        <result property="email" column="cliente_email"/>
+        <result property="vetado" column="cliente_vetado"/>
+        <collection property="rentados" ofType="ItemRentado" resultMap="ItemRentadoResult" columnPrefix="rentado_"/>
     </resultMap>
 
     <resultMap type='ItemRentado' id="ItemRentadoResult">
