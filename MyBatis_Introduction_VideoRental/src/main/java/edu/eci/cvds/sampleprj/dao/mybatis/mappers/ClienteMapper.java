@@ -31,6 +31,8 @@ public interface ClienteMapper {
      * Consultar todos los clientes
      * @return 
      */
-    public List<Cliente> consultarClientes();
+    public List<Cliente> consultarClientes(
+
+    );
     
 }
