@@ -67,6 +67,7 @@ public class MyBatisExample {
      * @throws SQLException 
      */
     public static void main(String args[]) throws SQLException,ParseException {
+
         SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
@@ -74,30 +75,28 @@ public class MyBatisExample {
         ClienteMapper cm=sqlss.getMapper(ClienteMapper.class);
         System.out.println(cm.consultarClientes());
 
-        /*Consultar un cliente*/
         System.out.println("Consulta Cliente 1 :");
         System.out.println(cm.consultarCliente(2));
-        /*
-        //Insertar Item
+   /**
+     //   Insertar Item
         System.out.println("Insertar item:");
         TipoItem nuevoTipo=new TipoItem(12,"pruebaaa");
         ItemMapper im = sqlss.getMapper(ItemMapper.class);
-        Item iteem=new Item(nuevoTipo,1,"Bla bla bla","prueba bla bla bla", new SimpleDateFormat("yyyy-MM-dd").parse("2020-09-2"), 465131, "formato", "genero");
+        Item iteem=new Item(nuevoTipo,2122222222,"Bla","prueba bla ", new SimpleDateFormat("yyyy-MM-dd").parse("2020-09-2"), 465641, "formato", "genero");
         im.insertarItem(iteem);
 
-        //Insertar un item rentado
+
         System.out.println("Insertar item rentado a un cliente:");
         cm.agregarItemRentadoACliente(1,12,new SimpleDateFormat("yyyy-MM-dd").parse("2020-09-2"), new SimpleDateFormat("yyyy-MM-dd").parse("2020-10-29"));
         System.out.println("ItemRentado Insertado:");
         */
 
-        /*Consultar los items*/
         ItemMapper im = sqlss.getMapper(ItemMapper.class);
         System.out.println("Consulta Items :");
         System.out.println(im.consultarItems());
-        
+
         sqlss.commit();
-        
+
         
         sqlss.close();
 

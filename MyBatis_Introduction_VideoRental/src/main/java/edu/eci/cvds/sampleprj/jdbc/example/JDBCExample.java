@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author hcadavid
+ *
  */
 public class JDBCExample {
 
@@ -57,7 +57,7 @@ public class JDBCExample {
             System.out.println("-----------------------");
 
 
-            int suCodigoECI=2141130;
+            int suCodigoECI=215673;
             registrarNuevoProducto(con, suCodigoECI, "SU_NOMBRE", 99999999);
             con.commit();
 
